@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    padding: 0;
+}
+
+.blog-header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.blog-header h1 {
+    font-size: 2.5rem;
+}
+
+.blog-header p {
+    font-size: 1.2rem;
+}
+
+.user-profile-link {
+    margin-left: 10px;
+    color: #fff;
+}
+
+.blog-post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.blog-post img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.blog-post h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.blog-post p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.blog-post img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 1000px;
+}
+
+.modal img {
+    width: 100%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Estilos de la barra de navegación */
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Color de fondo de la barra de navegación */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.navbar-brand img.rounded-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.navbar-toggler {
+    border: none; /* Quita el borde del botón del menú desplegable */
+}
+
+.navbar-toggler-icon {
+    background-color: #fff; /* Color del ícono del menú desplegable */
+}
+
+.navbar-nav .nav-item {
+    margin-left: 10px; /* Espaciado entre elementos de navegación */
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #f8f9fa; /* Color de fondo al pasar el mouse */
+    color: #343a40; /* Color del texto al pasar el mouse */
+}
+
+/* Estilos de carrusel */
+#movie-carousel {
+    background: #000;
+    margin-bottom: 30px;
+}
+
+.carousel-item {
+    height: 400px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Estilos de galería de películas */
+.movie-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.movie-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px 0;
+}
+  

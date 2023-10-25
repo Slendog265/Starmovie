@@ -1,0 +1,33 @@
+/* Estilo para el footer y el header */
+footer, header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px 0;
+}
+h1 {
+    font-size: 24px;
+}
+.registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.registration-form h2 {
+    text-align: center;
+}
+.registration-form .btn-block {
+    margin-top: 15px;
+}
+.login-link {
+    text-align: center;
+    margin-top: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0,0,0,0.9);
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="CSS/pefil style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="modal">
+        <img src="" alt="Imagen Ampliada">
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img class="rounded-image" src="Imagenes/Logo.jpg" alt="NexoWeb">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="pagina principal.html">Pagina principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="acerca de.html">Acerca de</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" id="search-input" placeholder="Buscar">
+                    <button class="btn btn-primary me-2" id="search-button" type="button">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="h-100 gradient-custom-2">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-9 col-xl-7">
+                    <div class="card">
+                        <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                     alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                                     style="width: 150px; z-index: 1">
+                                <!-- Agrega un label alrededor del botón -->
+                                <label for="customFile2" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                                       style="z-index: 1;">
+                                    Editar foto
+                                </label>
+                                <!-- Input oculto para seleccionar archivo -->
+                                <input type="file" class="form-control d-none" id="customFile2" />
+                            </div>
+                            <div class="ms-3" style="margin-top: 130px;">
+                                <h5>Nombre de usuario</h5>
+                                <p>Pais</p>
+                            </div>
+                        </div>
+                        <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                            <div class="d-flex justify-content-end text-center py-1">
+                                <div>
+                                    <p class="mb-1 h5">253</p>
+                                    <p class="small text-muted mb-0">Siguiendo</p>
+                                </div>
+                                <div class="px-3">
+                                    <p class="mb-1 h5">1026</p>
+                                    <p class="small text-muted mb-0">Seguidores</p>
+                                </div>
+                                <div>
+                                    <p class="mb-1 h5">478</p>
+                                    <p class="small text-muted mb-0">Calificaciones</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-4 text-black">
+                            <div class="mb-5">
+                                <p class="lead fw-normal mb-1">Acerca de</p>
+                                <div class="p-4" style="background-color: #f8f9fa;">
+                                    <p class="font-italic mb-1">Este es su campo de estudio</p>
+                                    <p class="font-italic mb-1">Recide en esta ciudad</p>
+                                    <p class="font-italic mb-0">Esta es su profesion</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <p class="lead fw-normal mb-0">Peliculas calificadas</p>
+                                <p class="mb-0"><a href="#!" class="text-muted">Ver todas</a></p>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col mb-2">
+                                    <div class="movie-card">
+                                        <img src="Imagenes/Scarface.jpg" class="img-fluid" alt="Pelicula 4">
+                                        <h2>Scarface</h2>
+                                        <p>Director: Brian Russell De Palma</p>
+                                        <p>Puntuación: <span class="puntuacion">8.6</span></p>
+                                    </div>
+                                </div>
+                                <div class="col mb-2">
+                                    <div class="movie-card">
+                                        <img src="Imagenes/The Godfather.jpg" class="img-fluid" alt="Pelicula 5">
+                                        <h2>The Godfather</h2>
+                                        <p>Director: Francis Ford Coppola</p>
+                                        <p>Puntuación: <span class="puntuacion">8.7</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col mb-2">
+                                    <div class="movie-card">
+                                        <img src="Imagenes/LA LA LAND.jpg" class="img-fluid" alt="Pelicula 5">
+                                        <h2>LA LA LAND</h2>
+                                        <p>Director: Damien Sayre Chazelle</p>
+                                        <p>Puntuación: <span class="puntuacion">10.0</span></p>
+                                    </div>
+                                </div>
+                                <div class="col mb-2">
+                                    <div class="movie-card">
+                                        <img src="Imagenes/Léon.jpg" class="img-fluid" alt="Pelicula 5">
+                                        <h2>Léon</h2>
+                                        <p>Director: Damien Luc Besson</p>
+                                        <p>Puntuación: <span class="puntuacion">10.0</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black">
+
+        <div class="container text-center">
+
+            <p>&copy; StarMovie</p>
+
+        </div>
+
+    </footer>
+    <script src="JS/perfil script.js"></script>
+</body>
+</html>
