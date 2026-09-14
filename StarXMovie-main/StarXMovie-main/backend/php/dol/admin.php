@@ -1,12 +1,14 @@
 <?php
 
+require_once __DIR__ . '/../config.php';
+
 class Admin {
     public $connection;
     public $CantidadPeliculas;
   
     public function __construct() {
         try {
-            $this->connection = new PDO('mysql:host=localhost;dbname=starxmovie', 'root', '');
+            $this->connection = new PDO($database_dsn, $database_user, $database_password);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->connection->exec("SET CHARACTER SET UTF8");
         } catch (PDOException $e) { // Cambiado Exception a PDOException

@@ -21,10 +21,12 @@
         </div>
         <div class="row">
             <?php
+            require_once __DIR__ . '/backend/php/config.php';
+
             $connection;
             $categoria_favorita;
             try {
-                $connection = new PDO('mysql:host=localhost;dbname=starxmovie', 'root', '');
+                $connection = new PDO($database_dsn, $database_user, $database_password);
                 $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $connection->exec("SET CHARACTER SET UTF8");
 
