@@ -1,0 +1,134 @@
+body {
+    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo de la barra de navegación */;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    max-height: 400px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    color: #007bff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.btn-votar {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-size: 1.2rem;
+    padding: 8px 20px;
+    border-radius: 20px; /* Agregado para hacer los botones más redondeados */
+}
+
+.btn-votar:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: rgba(0, 0, 0, 1); /* Color de fondo de la barra de navegación */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.navbar-brand img.rounded-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.navbar-toggler {
+    border: none; /* Quita el borde del botón del menú desplegable */
+}
+
+.navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 10px; /* Espaciado entre elementos de navegación */
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #f8f9fa; /* Color de fondo al pasar el mouse */
+    color: #343a40; /* Color del texto al pasar el mouse */
+}
+
+
+/* Estilo para la lista de actores */
+#actors-list {
+    color: #555;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+#actors-list span {
+    margin-right: 5px;
+}
+/* Agregar reglas de estilo CSS para los comentarios */
+#comments-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fake-comment {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Asegurar que cada comentario se muestre en una nueva línea */
+    align-items: flex-start;
+}
+
+.fake-comment img {
+    width: 40px; /* Tamaño de la imagen */
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 0px; /* Espacio inferior entre la imagen y el texto */
+}
+
+.fake-comment p {
+    margin: 0;
+}
+footer{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 0;
+}

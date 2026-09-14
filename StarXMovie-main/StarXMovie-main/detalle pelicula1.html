@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Película</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="frontend/css/detalle pelicula style.css" rel="stylesheet">
+    <style>
+        /* Agregar reglas de estilo CSS para los comentarios */
+        #comments-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .fake-comment {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .fake-comment img {
+            width: 40px; /* Tamaño de la imagen */
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .fake-comment p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark">
+            <a class="navbar-brand" href="pagina principal.php">
+                <img class="rounded-image" src="frontend/image/Logo.jpg" alt="NexoWeb">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfil.php">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="acerca de.html">Acerca de</a>
+                    </li>
+                </ul>
+                <form class="form-inline">
+                    <input class="form-control mr-2" type="text" id="search-input" placeholder="Buscar">
+                    <button class="btn btn-primary" id="search-button" type="button">Buscar</button>
+                </form>
+            </div>
+    </nav>
+    
+
+    <div class="container my-4">
+        <h1 class="text-center">Detalles de la Película</h1>
+        <div class="card mb-4">
+            <img id="movie-poster" class="card-img-top" alt="Poster de la Película">
+            <div class="card-body">
+                <h2 class="card-title" id="movie-title"></h2>
+                <p class="card-text" id="movie-overview"></p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary btn-sm float-right btn-votar" id="vote-button">Votar</a>
+            </div>
+        </div>
+        <div id="actors-list" class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Actores</h3>
+                <p class="card-text" id="actors-list-content"></p>
+            </div>
+        </div>
+    </div>
+    <!-- Comentarios Falsos -->
+    <div class="container my-4">
+        <h2>Comentarios</h2>
+        <div id="comments-container"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const apiKey = '4ea50b45d21ada72083adff687e91dce';
+    
+            // Obtener el ID de la película de la URL
+            const params = new URLSearchParams(window.location.search);
+            const movieId = params.get('id');
+    
+            // Verificar si el ID está presente en la URL
+            if (!movieId) {
+                console.error('ID de película no proporcionado en la URL.');
+                return;
+            }
+    
+            const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=es`;
+    
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const posterPath = data.poster_path;
+                    const posterUrl = `https://image.tmdb.org/t/p/w500${posterPath}`;
+    
+                    document.getElementById('movie-poster').src = posterUrl;
+                    document.getElementById('movie-title').textContent = data.title;
+                    document.getElementById('movie-overview').textContent = data.overview;
+    
+                    // Modificar el enlace de votar para incluir el ID de la película
+                    const voteButton = document.getElementById('vote-button');
+                    voteButton.href = `rating.php?pelicula_id=${movieId}`;
+                })
+                .catch(error => console.error('Error al obtener detalles de la película:', error));
+    
+                fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=es`)
+                .then(response => response.json())
+                .then(data => {
+                    const actorsListContent = document.getElementById('actors-list-content');
+    
+                    // Recorre la lista de actores y agrega sus nombres al contenido
+                    data.cast.forEach(actor => {
+                        actorsListContent.innerHTML += `<span>${actor.name}, </span>`;
+                    });
+                })
+                .catch(error => console.error('Error al obtener actores de la película:', error));
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const apiKey = '4ea50b45d21ada72083adff687e91dce';
+
+            // Obtener el ID de la película de la URL
+            const params = new URLSearchParams(window.location.search);
+            const movieId = params.get('id');
+
+            // Verificar si el ID está presente en la URL
+            if (!movieId) {
+                console.error('ID de película no proporcionado en la URL.');
+                return;
+            }
+
+            const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=es`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Tu código para obtener detalles de la película
+                })
+                .catch(error => console.error('Error al obtener detalles de la película:', error));
+
+            fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=es`)
+                .then(response => response.json())
+                .then(data => {
+                    // Tu código para obtener actores de la película
+                })
+                .catch(error => console.error('Error al obtener actores de la película:', error));
+
+            // Función para agregar comentarios falsos al contenedor
+            function addFakeComments() {
+                const commentsContainer = document.getElementById('comments-container');
+
+                // Array de comentarios falsos
+                const fakeComments = [
+                    { username: 'Usuario1', score: 8, comment: 'Buena película' },
+                    { username: 'Usuario2', score: 6, comment: 'Interesante, pero podría mejorar' },
+                    // Agrega más comentarios según sea necesario
+                ];
+
+                // Agregar cada comentario al contenedor
+                fakeComments.forEach(comment => {
+                    const commentElement = document.createElement('div');
+                    commentElement.innerHTML = `
+                        <div class="fake-comment">
+                            <img src="frontend/image/perfil/DefaultFPerfil.jpg" alt="Foto de perfil">
+                            <p><strong>${comment.username}</strong> - Puntuación: ${comment.score}</p>
+                            <p>${comment.comment}</p>
+                        </div>
+                    `;
+                    commentsContainer.appendChild(commentElement);
+                });
+            }
+
+            // Llama a la función para agregar comentarios falsos
+            addFakeComments();
+        });
+    </script>
+</body>
+</html>

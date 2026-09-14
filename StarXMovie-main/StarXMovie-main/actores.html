@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actores de la Película</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="frontend/css/index.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1>Actores de la Película</h1>
+        <ul id="actors-list">
+            <!-- Aquí se mostrarán los nombres de los actores -->
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const apiKey = '4ea50b45d21ada72083adff687e91dce';
+            const movieId = 675;
+            const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=es`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const actorsListContainer = document.getElementById('actors-list');
+
+                    // Recorre la lista de actores y crea elementos de lista para cada uno
+                    data.cast.forEach(actor => {
+                        const actorItem = document.createElement('a');
+                        actorItem.textContent = actor.name + ", ";
+                        actorsListContainer.appendChild(actorItem);
+                    });
+                })
+                .catch(error => console.error('Error al obtener actores de la película:', error));
+
+                fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const actorsListContainer = document.getElementById('actors-list');
+
+                    // Recorre la lista de actores y crea elementos de lista para cada uno
+                    data.cast.forEach(actor => {
+                        const actorItem = document.createElement('a');
+                        actorItem.textContent = actor.name + ", ";
+                        actorsListContainer.appendChild(actorItem);
+                    });
+                })
+                .catch(error => console.error('Error al obtener actores de la película:', error));
+        });
+    </script>
+
+</body>
+</html>
